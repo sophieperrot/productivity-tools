@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekly Todo List</title>
+    <link rel="stylesheet" href="weekly-todo.css">
+    <script src="weekly-todo.js" defer></script>
 </head>
 <body>
     <table id="weekly-todo-list">
@@ -28,37 +30,20 @@
                 <td class="status-3 day">x</td>
                 <td class="status-0 day"></td>
                 <td class="status-0 day"></td>
-                <td class="next week"></td>
+                <td class="next-week"></td>
                 <td class="task-name">Example</td>
+            </tr>
+            <tr>
+                <td class="status-0 day"></td>
+                <td class="status-0 day"></td>
+                <td class="status-0 day"></td>
+                <td class="status-0 day"></td>
+                <td class="status-0 day"></td>
+                <td class="status-0 day"></td>
+                <td class="next-week"></td>
+                <td class="task-name"></td>
             </tr>
         </tbody>
     </table>
-    
-    <script>
-        // Statuses: 0-n/a 1-assigned 2-postponed 3-completed
-        const statuses = ["", ".", ">", "x"];
-
-        const dayCells = document.querySelectorAll(".day");
-        dayCells.forEach((dayCell) => {
-            dayCell.addEventListener("click", () => {
-                console.log("old classlist", dayCell.classList);
-                let status = dayCell.classList[0].split("-").pop();
-                console.log("old status", status);
-                let newStatus = ++status % 4;
-                console.log("new status", newStatus);
-                dayCell.textContent = statuses[newStatus];
-                dayCell.classList.replace("status-" + --status, "status-" + newStatus);
-                console.log("new classlist", dayCell.classList);
-            });
-        });
-
-        const taskNameCells = document.querySelectorAll(".task-name");
-        taskNameCells.forEach((taskNameCell) => {
-            taskNameCell.addEventListener("dblclick", () => {
-                let taskName = prompt("Enter task name");
-                taskNameCell.textContent = taskName;
-            });
-        });
-    </script>
 </body>
 </html>
