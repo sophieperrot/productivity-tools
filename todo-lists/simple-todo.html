@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Todo</title>
+</head>
+<body>
+    <table id="todo-list">
+        <thead>
+            <tr>
+                <th>Done</th>
+                <th>Task</th>
+            </tr>
+        </thead>
+        <tbody id="todo-list-contents" name="completed">
+            <tr class="task">
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>Task 1</td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" id="add-task-button">Add task</button>
+    <div id="container"></div>
+
+    <script>
+        // Add Task button
+        const addTaskButton = document.querySelector("#add-task-button");
+        addTaskButton.addEventListener("click", () => {
+            let taskNameText = prompt("Enter task name");
+            if (taskNameText != null) {
+                let todoList = document.getElementById("todo-list");
+                let newEntry = todoList.insertRow(-1);
+                newEntry.classList.add("task");
+
+                let newCheckbox = newEntry.insertCell(0);
+                let checkbox = document.createElement("input")
+                newCheckbox.appendChild(checkbox);
+                checkbox.setAttribute("type", "checkbox");
+                checkbox.setAttribute("name", "completed");
+
+                let newTask = newEntry.insertCell(1);
+                let taskName = document.createTextNode(taskNameText);
+                newTask.appendChild(taskName);
+            }
+        });
+    </script>
+</body>
+</html>
