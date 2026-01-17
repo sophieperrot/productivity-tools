@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Todo</title>
+    <title>Simple Todo</title>
 </head>
 <body>
     <table id="todo-list">
@@ -13,17 +13,16 @@
                 <th>Task</th>
             </tr>
         </thead>
-        <tbody id="todo-list-contents" name="completed">
+        <tbody id="todo-list-contents">
             <tr class="task">
                 <td>
-                    <input type="checkbox">
+                    <input type="checkbox" name="completed">
                 </td>
                 <td>Task 1</td>
             </tr>
         </tbody>
     </table>
     <button type="button" id="add-task-button">Add task</button>
-    <div id="container"></div>
 
     <script>
         // Add Task button
