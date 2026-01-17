@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Todo List</title>
+</head>
+<body>
+    <table id="weekly-todo-list">
+        <thead>
+            <tr>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+                <th>></th>
+                <th>Task</th>
+            </tr>
+        </thead>
+        <tbody id="weekly-todo-contents">
+            <tr>
+                <!-- Statuses: 0-n/a 1-assigned 2-postponed 3-completed -->
+                <td class="status-0 day"></td>
+                <td class="status-2 day">></td>
+                <td class="status-0 day"></td>
+                <td class="status-3 day">x</td>
+                <td class="status-0 day"></td>
+                <td class="status-0 day"></td>
+                <td class="next week"></td>
+                <td class="task-name">Example</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <script>
+        // Statuses: 0-n/a 1-assigned 2-postponed 3-completed
+        const statuses = ["", ".", ">", "x"];
+
+        const dayCells = document.querySelectorAll(".day");
+        dayCells.forEach((dayCell) => {
+            dayCell.addEventListener("click", () => {
+                console.log("old classlist", dayCell.classList);
+                let status = dayCell.classList[0].split("-").pop();
+                console.log("old status", status);
+                let newStatus = ++status % 4;
+                console.log("new status", newStatus);
+                dayCell.textContent = statuses[newStatus];
+                dayCell.classList.replace("status-" + --status, "status-" + newStatus);
+                console.log("new classlist", dayCell.classList);
+            });
+        });
+    </script>
+</body>
+</html>
