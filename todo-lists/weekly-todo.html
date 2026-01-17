@@ -51,6 +51,14 @@
                 console.log("new classlist", dayCell.classList);
             });
         });
+
+        const taskNameCells = document.querySelectorAll(".task-name");
+        taskNameCells.forEach((taskNameCell) => {
+            taskNameCell.addEventListener("dblclick", () => {
+                let taskName = prompt("Enter task name");
+                taskNameCell.textContent = taskName;
+            });
+        });
     </script>
 </body>
 </html>
