@@ -14,6 +14,9 @@ dayCells.forEach((dayCell) => {
         dayCell.textContent = statuses[newStatus];
         dayCell.classList.replace("status-" + --status, "status-" + newStatus);
         // console.log("new classlist", dayCell.classList);
+        if (newStatus == 3) {
+            dayCell.parentNode.classList.add("completed");
+        }
     });
 });
 
