@@ -39,3 +39,16 @@ weeklyTodoList.querySelector(
     `th:nth-child(${columnIndex})`).classList.add("today-column");
 weeklyTodoList.querySelectorAll(
     `td:nth-child(${columnIndex})`).forEach(td => td.classList.add("today-column"));
+
+// DISPLAY "TODAY" TASKS
+const todayCells = weeklyTodoList.querySelectorAll("td.today-column");
+const todayTaskList = document.getElementById("today-task-list");
+todayCells.forEach((todayCell) => {
+    if (todayCell.textContent === "x") {
+        const li = document.createElement("li");
+        taskNameCell = todayCell.parentElement.querySelector(".task-name");
+        li.textContent = taskNameCell.textContent;
+        console.log(taskNameCell.textContent);
+        todayTaskList.appendChild(li);
+    }
+})

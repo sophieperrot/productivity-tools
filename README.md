@@ -20,7 +20,7 @@ Collection of productivity UIs to learn/practice HTML, CSS, Javascript
 - [x] modify task name
 - [ ] add logic to status symbols
 - [ ] show upcoming schedule i.e. list tasks by day of the week
-- [ ] show today's tasks
+- [x] show today's tasks
 - [ ] add some styling
     - [x] highlight "today" column
 - [ ] consider implementation of priorities/tags/etc.
