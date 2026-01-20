@@ -33,3 +33,5 @@ Similar to 2x2 priority matrices except values (importance, effort, urgency) are
 
 ### Prioritisation matrix
 That staircase-looking ranking tool
+
+### Gantt-chart-esque project/event overview
